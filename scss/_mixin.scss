@@ -1,0 +1,187 @@
+// float
+// 清除浮動
+@mixin clearfix {
+  .clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+// 開發設定
+// 開發使用
+@mixin outline {
+  *,
+  *::before,
+  *::after {
+    outline: 1px solid #eee;
+  }
+}
+@mixin container {
+  .container {
+    max-width: 1024px;
+    margin: 0 auto;
+  }
+}
+
+// 背景
+// 背景處理
+@mixin bg-cover {
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+@mixin bg-center {
+  background-position: center center;
+  background-size: center;
+  background-repeat: no-repeat;
+}
+// 背景圖右側固定
+@mixin bgi-right {
+  background-position: right center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+// 背景圖左側固定
+@mixin bgi-left {
+  background-position: right center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+@mixin bg-cover {
+  .bg-cover {
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
+// 背景透明
+@mixin bg-alpha {
+  background: rgba(0, 0, 0, 0.6);
+}
+// 背景圖取代文字
+@mixin hide-text {
+  .hide-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-indent: 101%;
+  }
+}
+// 背景定位
+// 左側定位
+@mixin absY-left {
+  top: 0;
+  bottom: 0;
+  /* left: 0; */
+}
+// 右側定位
+@mixin absY-right {
+  top: 0;
+  bottom: 0;
+  right: 0;
+}
+
+// 斷點break-point
+@mixin sm {
+  @media (max-width: 576px) {
+    @content;
+  }
+}
+@mixin md {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+@mixin lg {
+  @media (max-width: 992px) {
+    @content;
+  }
+}
+
+@mixin header-carousel-item {
+  .header-carousel-item {
+    height: 450px;
+  }
+}
+// 定位
+// 定位左側
+@mixin absoluteY-left {
+  .absoluteY-left {
+    top: 0;
+    bottom: 0;
+    /* left: 0; */
+  }
+}
+@mixin absoluteY-right {
+  .absoluteY-right {
+    top: 0;
+    bottom: 0;
+    right: 0;
+  }
+}
+@mixin bg-alpha {
+  .bg-alpha {
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+}
+@mixin desk($screen) {
+  @media (max-width: $screen) {
+    @content;
+  }
+}
+@mixin deskM($screen) {
+  @media (min-width: $screen) {
+    @content;
+  }
+}
+@mixin mobile--L($screen) {
+  @media (max-width: $screen) {
+    @content;
+  }
+}
+@mixin mobileM--L($screen) {
+  @media (min-width: $screen) {
+    @content;
+  }
+}
+@mixin md {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+@mixin mobileM--M($screen) {
+  @media (min-width: $screen) {
+    @content;
+  }
+}
+@mixin mobile--S($screen) {
+  @media (max-width: $screen) {
+    @content;
+  }
+}
+@mixin mobileM--S($screen) {
+  @media (min-width: $screen) {
+    @content;
+  }
+}
+@mixin no-gutters {
+  .no-gutters {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+@mixin col {
+  .col {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+@mixin cols {
+  %col {
+    position: relative;
+    min-height: 1px;
+    padding-left: $gutter-width/2;
+    padding-right: $gutter-width/2;
+    max-width: 100%;
+    flex: 0 0 100%;
+  }
+}

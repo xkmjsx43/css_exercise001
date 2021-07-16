@@ -1,0 +1,21 @@
+.content{
+  background: orange;
+  margin: 0 auto;
+  padding: 30px;
+  width: 500px;
+}
+
+.left{
+  background: blue;
+  height: 300px;
+  width: 100px;
+  float: left;
+}
+.right{
+  background: red;
+  height: 300px;
+  width: 100px;
+  float: right;
+}
+
+@include clearfix;

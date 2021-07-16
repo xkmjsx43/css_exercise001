@@ -1,0 +1,15 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: "Noto Sans TC", sans-serif;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.hidden,
+[hidden] {
+  display: none !important;
+}

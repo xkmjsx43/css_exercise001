@@ -1,195 +1,237 @@
-// *,
-// *::after,
-// *::before {
-//   padding: 0;
-//   margin: 0;
-//   list-style: none;
-//   outline: 1px solid #ddd;
-// }
-@import "meyerwebreset";
-$primary: #00cc99;
-.test-primary {
-  color: $primary;
-}
-.color-fb {
-  color: #4460a0;
-}
-.color-twitter {
-  color: #00aaec;
-}
+// import
+@import "_meyerwebreset";
+@import "_base";
+@import "_mixin";
+
+// include
+// @include outline;
+@include container;
+
+// variable
+$fb-color: #4460a0;
+$twitter-color: #00aaec;
+$primary-color: #00cc99;
+$primary-bgc: #f6f6f6;
+$success-color: #22b28e;
+
+// 共用區
 a {
   text-decoration: none;
 }
-.d-block {
-  display: block;
+section + section {
+  margin-top: 4rem;
 }
+h2 {
+  font-weight: 600;
+  line-height: 1.5;
+  padding: 2rem;
+}
+.text-success {
+  color: $success-color;
+}
+
+// 個別設定
 .topbar {
+  padding: 0.25rem;
   display: flex;
-  flex-direction: row;
   justify-content: flex-end;
-  background-color: #f6f6f6;
+  background-color: $primary-bgc;
+  li {
+    padding: 0.25rem;
+  }
+  li + li::before {
+    content: "|";
+    color: #ccc;
+    margin-right: 0.25rem;
+  }
   a {
-    padding: 5px;
-    display: block;
+    display: inline-block;
     transition: 0.3s;
-    + a {
-      border-left: 1px solid #ccc;
-    }
-    > i {
-      padding: 3px;
-    }
     &:hover {
       transform: scale(1.2);
     }
   }
-}
-.logo {
-  background-image: url(https://raw.githubusercontent.com/hexschool/HTMLHWSource/master/singlePage/logo.png);
-  width: 224px;
-  height: 50px;
-  display: block;
-  white-space: nowrap;
-  overflow: hidden;
-  text-indent: 101%;
-}
-.header {
-  display: flex;
-  justify-content: space-between;
-}
-.nav-menu {
-  display: flex;
-  align-items: center;
-  a {
-    display: block;
-    padding: 12px 1rem;
-    font-weight: 600;
-    color: #00cc99;
-    border-bottom: 3px solid transparent;
-    transition: 0.3s;
-    &:hover {
-      border-bottom: 3px solid $primary;
-      color: red;
-      transform: scale(1.2);
-      // transform: rotate(-22.5deg);
-    }
+  .fb {
+    color: $fb-color;
+  }
+  .twitter {
+    color: $twitter-color;
   }
 }
 
-.container {
-  max-width: 1024px;
-  margin: 0 auto;
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .logo {
+    display: block;
+    width: 224px;
+    height: 50px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-indent: 101%;
+    background: url(https://raw.githubusercontent.com/hexschool/HTMLHWSource/master/singlePage/logo.png);
+  }
+
+  .nav-menu {
+    display: flex;
+    a {
+      padding: 0.7rem;
+      display: block;
+      color: $primary-color;
+      font-weight: 600;
+      border-bottom: 3px solid transparent;
+      transition: 0.3s;
+      &:hover {
+        color: red;
+        transform: scale(1.2);
+        border-bottom: 3px solid $primary-color;
+      }
+    }
+  }
 }
 
 .banner {
   display: flex;
-  justify-content: center;
   align-items: center;
-  height: 346px;
+  height: 354px;
   background-image: url(https://raw.githubusercontent.com/hexschool/HTMLHWSource/master/singlePage/banner.png);
-  background-size: cover;
-  > h2 {
-    padding: 2rem 1rem;
+  @include bg-cover;
+  h2 {
     width: 100%;
     color: #fff;
-    font-size: 2.5rem;
-    background: rgba(0, 0, 0, 0.5);
+    text-align: left;
+    font-size: 2rem;
+    background-color: rgba(0, 0, 0, 0.3);
   }
 }
-.courses {
-  margin-top: 4rem;
+
+.course {
   display: flex;
-  justify-content: space-around;
+  padding: 0.5rem;
   > li {
-    width: 30%;
-    box-shadow: 0px 5px 10px #ccc;
+    flex: 1;
+    margin: 1rem;
+    line-height: 1.5;
+    box-shadow: 0 5px 5px #ccc;
   }
-  .pic {
-    display: flex;
-    align-items: center;
-    height: 140px;
-    margin-bottom: 0.5rem;
-    img {
-      max-width: 100%;
-      display: block;
-      margin: 0 auto;
-    }
+  img {
+    display: block;
+    width: 100%;
+    @include bg-center;
   }
   .txt {
-    line-height: 1.5;
     padding: 0.5rem;
-    > h3 {
+    h3 {
       text-align: center;
-      margin-bottom: 0.5rem;
+      padding: 0.5rem;
+      font-size: 1.2rem;
       font-weight: 600;
-      font-size: 1.25rem;
     }
-    .feature > li {
-      list-style-type: disc;
-      list-style-position: inside;
+    p {
+      padding: 0.5rem;
+    }
+  }
+
+  .html5 {
+    img {
+      background-image: url(https://raw.githubusercontent.com/hexschool/HTMLHWSource/master/singlePage/html.png);
+    }
+  }
+  .rwd {
+    img {
+      background-image: url(https://raw.githubusercontent.com/hexschool/HTMLHWSource/master/singlePage/rwd.png);
+    }
+  }
+  .jquery {
+    img {
+      background-image: url(https://raw.githubusercontent.com/hexschool/HTMLHWSource/master/singlePage/jQuery.png);
+    }
+  }
+  .feature {
+    list-style-type: disc;
+    list-style-position: inside;
+    padding-left: 2rem;
+    li {
+      padding: 0.25rem;
     }
   }
 }
+
 .compare {
-  margin-top: 4rem;
-  line-height: 1.5;
-  table {
-    width: 80%;
-    text-align: left;
-    margin: 0 auto;
+  th,
+  td {
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid #ccc;
   }
   h2 {
-    padding: 1rem 0;
-    text-align: center;
     font-size: 1.5rem;
-    font-weight: 600;
+    padding: 2rem;
+    text-align: center;
   }
-  th {
-    font-weight: 600;
-    background-color: #f7f7f7;
-    border-top: 1px solid #e3e3e3;
-    border-bottom: 1px solid #e3e3e3;
-    padding: 0.5rem 1rem;
+  table {
+    width: 90%;
+    margin: 0 auto;
+    table-layout: fixed;
+    text-align: left;
   }
-  td {
-    border-bottom: 1px solid #e3e3e3;
-    padding: 0.5rem 1rem;
+  thead {
+    background-color: $primary-bgc;
+    font-weight: 600;
+    border-top: 1px solid #ccc;
   }
 }
+
 .respond {
-  margin-top: 4rem;
-  background: linear-gradient(#00644b, #009872);
+  background-image: linear-gradient(#00644b, #009872);
   h2 {
-    text-align: center;
-    line-height: 1.5;
-    color: #fff;
     font-size: 1.5rem;
-    font-weight: 600;
-    padding: 1.5rem;
+    text-align: center;
+    color: #fff;
+    letter-spacing: 1px;
   }
   form {
     display: flex;
-    justify-content: space-between;
-    > div {
+    padding: 1rem;
+    line-height: 1.5;
+    .respond-info,
+    .respond-msg {
+      flex: 1;
+      margin: 1rem;
+    }
+    textarea,
+    label,
+    input,
+    button {
+      font-size: 1.2rem;
+      border-radius: 5px;
+      border: none;
+    }
+    .respond-msg {
       padding: 1rem;
+    }
+    .respond-info {
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      width: 50%;
+      label {
+        color: #fff;
+        margin-bottom: 0.5rem;
+      }
+      input {
+        padding: 0.25rem 1rem;
+        margin-bottom: 0.5rem;
+      }
     }
-    label,
-    input {
-      display: block;
-      font-size: 1.2rem;
-    }
-    label {
+    .respond-btn {
+      align-self: flex-end;
+      margin-top: 1rem;
+      cursor: pointer;
+      background-color: $primary-color;
       color: #fff;
+      padding: 0.25rem 1rem;
       font-weight: 600;
-    }
-    .btn{
-      transition: .3s;
-      &:hover{
-        color: white;
-        font-weight: 800;
+      transition: 0.3s;
+      &:hover {
         background-color: orange;
       }
     }
@@ -199,17 +241,18 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #fff;
-  padding: 2rem 1rem;
-  img {
-    display: block;
-    width: 171px;
-    height: 36px;
+  padding: 1rem 2rem;
+  .pic {
+    img {
+      display: block;
+    }
   }
-  li {
-    line-height: 1.5;
-  }
-  span {
-    color: #e12d80;
+  .connection {
+    li {
+      padding: 0.5rem;
+    }
+    a {
+      color: #e33b88;
+    }
   }
 }
