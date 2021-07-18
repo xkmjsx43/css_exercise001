@@ -75,18 +75,8 @@ img {
   margin: 0 auto;
 }
 
-a {
-  text-decoration: none;
-}
-
-section + section {
+.mt-4rem {
   margin-top: 4rem;
-}
-
-h2 {
-  font-weight: 600;
-  line-height: 1.5;
-  padding: 2rem;
 }
 
 .text-success {
@@ -118,6 +108,7 @@ h2 {
 
 .topbar a {
   display: inline-block;
+  text-decoration: none;
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s;
@@ -175,6 +166,7 @@ h2 {
   color: #00cc99;
   font-weight: 600;
   border-bottom: 3px solid transparent;
+  text-decoration: none;
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s;
@@ -212,6 +204,9 @@ h2 {
   color: #fff;
   text-align: left;
   font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.5;
+  padding: 2rem;
   background-color: rgba(0, 0, 0, 0.3);
 }
 
@@ -289,6 +284,9 @@ h2 {
   font-size: 1.5rem;
   padding: 2rem;
   text-align: center;
+  font-weight: 600;
+  line-height: 1.5;
+  padding: 2rem;
 }
 
 .compare table {
@@ -316,6 +314,9 @@ h2 {
   text-align: center;
   color: #fff;
   letter-spacing: 1px;
+  font-weight: 600;
+  line-height: 1.5;
+  padding: 2rem;
 }
 
 .respond form {
@@ -415,6 +416,7 @@ h2 {
 }
 
 .footer .connection a {
+  text-decoration: none;
   color: #e33b88;
 }
 /*# sourceMappingURL=psd.css.map */

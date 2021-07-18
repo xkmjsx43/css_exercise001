@@ -15,17 +15,10 @@ $primary-bgc: #f6f6f6;
 $success-color: #22b28e;
 
 // 共用區
-a {
-  text-decoration: none;
-}
-section + section {
+.mt-4rem {
   margin-top: 4rem;
 }
-h2 {
-  font-weight: 600;
-  line-height: 1.5;
-  padding: 2rem;
-}
+
 .text-success {
   color: $success-color;
 }
@@ -46,6 +39,7 @@ h2 {
   }
   a {
     display: inline-block;
+    text-decoration: none;
     transition: 0.3s;
     &:hover {
       transform: scale(1.2);
@@ -81,6 +75,7 @@ h2 {
       color: $primary-color;
       font-weight: 600;
       border-bottom: 3px solid transparent;
+      text-decoration: none;
       transition: 0.3s;
       &:hover {
         color: red;
@@ -102,6 +97,9 @@ h2 {
     color: #fff;
     text-align: left;
     font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.5;
+    padding: 2rem;
     background-color: rgba(0, 0, 0, 0.3);
   }
 }
@@ -168,6 +166,9 @@ h2 {
     font-size: 1.5rem;
     padding: 2rem;
     text-align: center;
+    font-weight: 600;
+    line-height: 1.5;
+    padding: 2rem;
   }
   table {
     width: 90%;
@@ -189,6 +190,9 @@ h2 {
     text-align: center;
     color: #fff;
     letter-spacing: 1px;
+    font-weight: 600;
+    line-height: 1.5;
+    padding: 2rem;
   }
   form {
     display: flex;
@@ -252,6 +256,7 @@ h2 {
       padding: 0.5rem;
     }
     a {
+      text-decoration: none;
       color: #e33b88;
     }
   }
